@@ -53,6 +53,7 @@ def get_order_details(connection, order_id):
             'price_per_unit': price_per_unit
         })
 
+    
     cursor.close()
 
     return records
