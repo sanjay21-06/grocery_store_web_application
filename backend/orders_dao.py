@@ -24,6 +24,7 @@ def insert_order(connection, order):
             float(order_detail_record['quantity']),
             float(order_detail_record['total_price'])
         ])
+        
     cursor.executemany(order_details_query, order_details_data)
 
     connection.commit()
@@ -82,6 +83,7 @@ def get_all_orders(connection):
 if __name__ == '__main__':
     connection = get_sql_connection()
     print(get_all_orders(connection))
+    # --- reference ---
     # print(get_order_details(connection,4))
     # print(insert_order(connection, {
     #     'customer_name': 'dhaval',
@@ -99,4 +101,4 @@ if __name__ == '__main__':
     #             'total_price': 30
     #         }
     #     ]
-    # }))
+    #}))
